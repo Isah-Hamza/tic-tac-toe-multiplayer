@@ -24,5 +24,5 @@ io.on('connection', (socket) => {
 })
 
 server.listen(PORT, () => {
-    console.log('server listening on port 5000')
+    console.log('server listening on port ', PORT)
 })
