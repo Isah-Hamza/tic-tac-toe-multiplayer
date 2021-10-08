@@ -7,10 +7,11 @@ const app = express();
 app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server);
-app.use(express.static('../public'));
+app.use(express.static('./public'));
+const PORT = process.env.port || 3000 ; 
 
 app.get('/',(req, res) => {
-    res.sendFile('../public/index.html')
+    res.sendFile('./public/index.html')
 })
 
 io.on('connection', (socket) => {
@@ -22,6 +23,6 @@ io.on('connection', (socket) => {
     })
 })
 
-server.listen('5000', () => {
+server.listen(port, () => {
     console.log('server listening on port 5000')
 })
