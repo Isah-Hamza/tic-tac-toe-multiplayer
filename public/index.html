@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="header">
+                <p>TIC TAC TOE</p>
+                <p><i class="fa fa-bars " style="font-size: 25px;"></i></p>
+            </div>
+        </header>
+        <div class="select-player">
+            <h1>Choose an option to continue</h1>
+            <div class="options">
+                <button class="single-player">Single Player</button>
+                <button class="multi-player">Multi Players</button>
+            </div>
+        </div>
+        <div class="winner"><h1 class="animate-winner"></h1></div>
+        <div class="turn" style = 'margin-bottom: 30px;'> <h1>X's Turn</h1> </div>
+        <div class="game-board">
+           <div class="portion"></div>
+           <div class="portion"></div>
+           <div class="portion"></div>
+           <div class="portion"></div>
+           <div class="portion"></div>
+           <div class="portion"></div>
+           <div class="portion"></div>
+           <div class="portion"></div>
+           <div class="portion"></div>
+        </div>
+        <button class="new-game"> <span style="margin-right: 7px;"> Play Again </span>  &#8634;</button>
+        <footer>
+            <h2 style="margin-bottom: 10px;">Score Board</h2>
+            <div><sapn>X</sapn> &nbsp; &#8594; &nbsp; <span class="x_score"> 0 </span></div>
+            <div><sapn>O</sapn> &nbsp; &#8594; &nbsp; <span class="o_score"> 0 </span></div>
+        </footer>
+    </div>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="index.js" defer></script>
+</body>
+</html>

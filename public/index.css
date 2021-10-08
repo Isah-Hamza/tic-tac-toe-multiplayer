@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #e5e5e5;
+    background-color: black;
+    color: white;
+}
+body::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 60px;
+
+}
+header{
+    z-index: 1;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: -9%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-weight: bolder;
+    border-bottom: 1px solid gainsboro;
+}
+header .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+h1::selection h1{
+    background-color: transparent !important;
+}
+.wrapper{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: calc( 100vh - 60px );
+}
+.select-player{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #e5e5e5;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-player .options{
+    display:  flex;
+    margin-top: 20px;
+    white-space: nowrap;
+}
+.select-player .options button{
+    margin: 5px;
+    
+}
+.game-board{
+    display: grid;
+    border: 1px solid black;
+    border: 1px solid white;
+    grid-template-columns: repeat( 3, 1fr );
+    margin-bottom: 25px;
+}
+.game-board div:nth-child(1),
+.game-board div:nth-child(2),
+.game-board div:nth-child(3),
+.game-board div:nth-child(4),
+.game-board div:nth-child(5),
+.game-board div:nth-child(6){
+    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
+}
+
+.game-board div:nth-child(2),
+.game-board div:nth-child(5),
+.game-board div:nth-child(8){
+    border-right: 1px solid black;
+    border-left: 1px solid black;  
+
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    
+}
+.game-board div{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 35px;
+}
+.game-board div::selection{
+    background-color: transparent;
+}
+button{
+    padding: 10px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: auto;
+    font-size: 12px;
+    outline: none;
+    border: 1px solid gainsboro;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
+.winner{
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+footer{
+    margin-top: 50px;
+    padding: 20px 50px;
+    border: 1px solid gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+}
+.animate-winner{
+   animation: scale 5s linear infinite;
+   color: green;
+   display: inline-block;
+}
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@media screen and (max-width:800px) {
+    .winner{
+        font-size: 30px;
+    }
+    .select-player h1{
+        font-size: 20px;
+    }
+    .select-player button{
+        padding: 10px 20px;
+        margin: 10px;
+    }
+}
+@media screen and (max-width:350px) {
+    .winner{
+        font-size: 20px;
+    }
+}
