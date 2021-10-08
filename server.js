@@ -8,7 +8,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server);
 app.use(express.static('./public'));
-const PORT = process.env.port || 3000 ; 
+const PORT = process.env.PORT || 3000 ; 
 
 app.get('/',(req, res) => {
     res.sendFile('./public/index.html')
